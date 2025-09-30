@@ -1,3 +1,8 @@
+import { useEffect, useRef } from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import mixitup from "mixitup";
+
 const products = [
   { id: 1, img: "/img/featured/feature-1.jpg", categories: "oranges fresh-meat" },
   { id: 2, img: "/img/featured/feature-2.jpg", categories: "vegetables fastfood" },
@@ -10,6 +15,27 @@ const products = [
 ];
 
 function App() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      mixitup(containerRef.current, {
+        selectors: { target: ".mix" },
+        animation: { duration: 300 },
+      });
+    }
+
+    // Handle active class toggle
+    const controls = document.querySelectorAll<HTMLLIElement>(
+      ".featured__controls li"
+    );
+    controls.forEach((control) => {
+      control.addEventListener("click", () => {
+        controls.forEach((c) => c.classList.remove("active"));
+        control.classList.add("active");
+      });
+    });
+  }, []);
 
   return (
     <>
@@ -33,7 +59,7 @@ function App() {
             </div>
           </div>
 
-          <div className="row featured__filter">
+          <div className="row featured__filter" ref={containerRef}>
             {products.map((p) => (
               <div
                 key={p.id}
@@ -42,7 +68,12 @@ function App() {
                 <div className="featured__item">
                   <div
                     className="featured__item__pic"
-                    style={{ backgroundImage: `url(${p.img})` }}
+                    style={{
+                      backgroundImage: `url(${p.img})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      height: "250px",
+                    }}
                   >
                     <ul className="featured__item__pic__hover">
                       <li>
@@ -68,7 +99,7 @@ function App() {
       </section>
       {/* Featured Section End */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
