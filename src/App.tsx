@@ -2,17 +2,8 @@ import { useEffect, useRef } from "react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import mixitup from "mixitup";
+import {ProductDB} from "./utils/ProductDB.ts";
 
-const products = [
-  { id: 1, img: "/img/featured/feature-1.jpg", categories: "oranges fresh-meat" },
-  { id: 2, img: "/img/featured/feature-2.jpg", categories: "vegetables fastfood" },
-  { id: 3, img: "/img/featured/feature-3.jpg", categories: "vegetables fresh-meat" },
-  { id: 4, img: "/img/featured/feature-4.jpg", categories: "fastfood oranges" },
-  { id: 5, img: "/img/featured/feature-5.jpg", categories: "fresh-meat vegetables" },
-  { id: 6, img: "/img/featured/feature-6.jpg", categories: "oranges fastfood" },
-  { id: 7, img: "/img/featured/feature-7.jpg", categories: "fresh-meat vegetables" },
-  { id: 8, img: "/img/featured/feature-8.jpg", categories: "fastfood vegetables" },
-];
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -60,7 +51,7 @@ function App() {
           </div>
 
           <div className="row featured__filter" ref={containerRef}>
-            {products.map((p) => (
+            {ProductDB.getAll().map((p) => (
               <div
                 key={p.id}
                 className={`col-lg-3 col-md-4 col-sm-6 mix ${p.categories}`}
@@ -88,7 +79,7 @@ function App() {
                     </ul>
                   </div>
                   <div className="featured__item__text">
-                    <h6><a href="#">Crab Pool Security</a></h6>
+                    <h6><a href={`${import.meta.env.BASE_URL}product/${p.id}`}>{p.name}</a></h6>
                     <h5>$30.00</h5>
                   </div>
                 </div>
