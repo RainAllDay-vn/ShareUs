@@ -1,8 +1,8 @@
-import { useParams } from "react-router-dom";
+//import { useParams } from "react-router-dom";
 import ProductCarousel from "./ProductCarousel.tsx";
 
 export default function ProductPage() {
-  const { id } = useParams<{ id: string }>(); // get the :id param
+  //const { id } = useParams<{ id: string }>(); // get the :id param
 
   return (
     <>
