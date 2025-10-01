@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import ProductCarousel from "./ProductCarousel.tsx";
 
 export default function ProductPage() {
   const { id } = useParams<{ id: string }>(); // get the :id param
@@ -11,35 +12,7 @@ export default function ProductPage() {
           <div className="row">
             <div className="col-lg-6 col-md-6">
               <div className="product__details__pic">
-                <div className="product__details__pic__item">
-                  <img
-                    className="product__details__pic__item--large"
-                    src="/ShareUs/img/product/details/product-details-1.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="product__details__pic__slider owl-carousel">
-                  <img
-                    data-imgbigurl="ShareUs/img/product/details/product-details-2.jpg"
-                    src="/ShareUs/img/product/details/thumb-1.jpg"
-                    alt=""
-                  />
-                  <img
-                    data-imgbigurl="ShareUs/img/product/details/product-details-3.jpg"
-                    src="/ShareUs/img/product/details/thumb-2.jpg"
-                    alt=""
-                  />
-                  <img
-                    data-imgbigurl="ShareUs/img/product/details/product-details-5.jpg"
-                    src="/ShareUs/img/product/details/thumb-3.jpg"
-                    alt=""
-                  />
-                  <img
-                    data-imgbigurl="ShareUs/img/product/details/product-details-4.jpg"
-                    src="/ShareUs/img/product/details/thumb-4.jpg"
-                    alt=""
-                  />
-                </div>
+                <ProductCarousel />
               </div>
             </div>
             <div className="col-lg-6 col-md-6">
@@ -50,7 +23,7 @@ export default function ProductPage() {
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star"></i>
-                  <i className="fa fa-star-half-o"></i>
+                  <i className="fa fa-star-half-alt"></i>
                   <span>(18 reviews)</span>
                 </div>
                 <div className="product__details__price">$50.00</div>
@@ -75,10 +48,10 @@ export default function ProductPage() {
                   <li>
                     <b>Share on</b>
                     <div className="share">
-                      <a href="#"><i className="fa fa-facebook"></i></a>
-                      <a href="#"><i className="fa fa-twitter"></i></a>
-                      <a href="#"><i className="fa fa-instagram"></i></a>
-                      <a href="#"><i className="fa fa-pinterest"></i></a>
+                      <a href="#"><i className="fab fa-facebook"></i></a>
+                      <a href="#"><i className="fab fa-twitter"></i></a>
+                      <a href="#"><i className="fab fa-instagram"></i></a>
+                      <a href="#"><i className="fab fa-pinterest"></i></a>
                     </div>
                   </li>
                 </ul>
