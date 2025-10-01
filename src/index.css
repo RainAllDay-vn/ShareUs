@@ -249,6 +249,9 @@ ol {
 /*---------------------
   Header
 -----------------------*/
+.header {
+  background: #43753b;
+}
 
 .header__top {
   background: #f5f5f5;
@@ -539,7 +542,7 @@ ol {
 
 .header__cart .header__cart__price {
   font-size: 14px;
-  color: #6f6f6f;
+  color: #252525;
   display: inline-block;
 }
 
@@ -1660,6 +1663,7 @@ ol {
 -----------------------*/
 
 .product-details {
+  background: #f9f2e2;
   padding-top: 80px;
 }
 

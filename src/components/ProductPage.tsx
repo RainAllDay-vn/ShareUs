@@ -26,6 +26,7 @@ export default function ProductPage() {
                   <i className="fa fa-star-half-alt"></i>
                   <span>(18 reviews)</span>
                 </div>
+                <h6>Đăng bởi: Nguyễn Thu Hà</h6>
                 <div className="product__details__price">$50.00</div>
                 <p>
                   Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam
