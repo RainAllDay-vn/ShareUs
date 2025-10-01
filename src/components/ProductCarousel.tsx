@@ -10,10 +10,10 @@ export default function ProductCarousel() {
   const [nav2, setNav2] = useState<any>(null);
 
   const images = [
-    "/ShareUs/img/product/details/product-details-1.jpg",
-    "/ShareUs/img/product/details/product-details-2.jpg",
-    "/ShareUs/img/product/details/product-details-3.jpg",
-    "/ShareUs/img/product/details/product-details-4.jpg",
+    "/img/product/details/product-details-1.jpg",
+    "/img/product/details/product-details-2.jpg",
+    "/img/product/details/product-details-3.jpg",
+    "/img/product/details/product-details-4.jpg",
   ];
 
   return (
